@@ -1,19 +1,17 @@
 import streamlit as st
 from groq import Groq
-from dotenv import load_dotenv
 from streamlit_option_menu import option_menu
 from pypdf import PdfReader
 import pandas as pd
 import plotly.express as px
-import os
 
 # -------------------
 # Load Environment
 # -------------------
-load_dotenv()
+import streamlit as st
 
 client = Groq(
-    api_key=os.getenv("GROQ_API_KEY")
+    api_key=st.secrets["GROQ_API_KEY"]
 )
 
 # -------------------
